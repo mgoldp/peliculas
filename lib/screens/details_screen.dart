@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DeatilsScreen extends StatelessWidget {
-  const DeatilsScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(
+        child: const Center(
+          child: Text('Details Screen'),
+        ),
+      ),
+    );
   }
 }
