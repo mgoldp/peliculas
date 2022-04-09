@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         'details': (__) => DeatilsScreen(),
       },
       theme: ThemeData.light().copyWith(
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           color: Colors.indigo,
         ),
       ),
