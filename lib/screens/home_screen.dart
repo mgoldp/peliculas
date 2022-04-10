@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search_outlined),
+            icon: const Icon(Icons.search_outlined),
           ),
         ],
       ),
@@ -28,7 +28,10 @@ class HomeScreen extends StatelessWidget {
             CardSwiper(movies: moviesProvider.onDisplayMovies),
 
             // Slider de películas.
-            MovieSlider(),
+            MovieSlider(
+              movies: moviesProvider.popularMovies,
+              title: 'Populares',
+            ),
           ],
         ),
       ),
