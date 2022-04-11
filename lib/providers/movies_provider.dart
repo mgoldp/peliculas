@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:peliculas/models/models.dart';
@@ -37,8 +36,8 @@ class MoviesProvider extends ChangeNotifier {
 
     final jsonData = await _getJsonData('3/movie/popular', _popularPage);
     final popularResponse = PopularResponse.fromJson(jsonData);
-    popularMovies = popularResponse.results;
-    //popularMovies = [...popularMovies, ...popularResponse.results];
+    //popularMovies = popularResponse.results;
+    popularMovies = [...popularMovies, ...popularResponse.results];
     notifyListeners();
   }
 }
