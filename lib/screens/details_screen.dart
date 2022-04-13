@@ -19,7 +19,7 @@ class DeatilsScreen extends StatelessWidget {
               _Overwiew(
                 movie: movie,
               ),
-              CastingCards(movie.id),
+              CastingCards(movieId: movie.id),
             ]),
           ),
         ],

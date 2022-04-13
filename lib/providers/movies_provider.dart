@@ -44,9 +44,7 @@ class MoviesProvider extends ChangeNotifier {
   }
 
   Future<List<Cast>> getMovieCast(int movieId) async {
-    // TODO: revisar el mapa
-
-    print('Pidiendo ifo al servidor de acores');
+    if (moviesCast.containsKey(movieId)) return moviesCast[movieId]!;
 
     final jsonData = await _getJsonData('3/movie/$movieId/credits');
     final creditResponse = CreditResponse.fromJson(jsonData);
