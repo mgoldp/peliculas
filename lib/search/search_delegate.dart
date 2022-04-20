@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:peliculas/models/search_movies_response.dart';
 import 'package:peliculas/providers/movies_provider.dart';
@@ -73,12 +72,17 @@ class _MovieItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    movie.heroId = 'search-${movie.id}';
+
     return ListTile(
-      leading: FadeInImage(
-        image: NetworkImage(movie.fullPosterImg),
-        placeholder: const AssetImage('assets/no-image.jpg'),
-        width: 50,
-        fit: BoxFit.contain,
+      leading: Hero(
+        tag: movie.heroId!,
+        child: FadeInImage(
+          image: NetworkImage(movie.fullPosterImg),
+          placeholder: const AssetImage('assets/no-image.jpg'),
+          width: 50,
+          fit: BoxFit.contain,
+        ),
       ),
       title: Text(movie.title),
       subtitle: Text(movie.originalTitle),
